@@ -1,35 +1,58 @@
+import { useContext, useState } from "react";
 import swal from "sweetalert";
-
+import "react-datepicker/dist/react-datepicker.css";
+import ReactDatePicker from "react-datepicker";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const AddJob = () => {
+    const [startDate, setStartDate] = useState(new Date());
+    const { user} = useContext(AuthContext);
+
     const handleAddJob = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const date = form.date.value;
+        const image = form.image.value;
         const title = form.title.value;
         const category = form.category.value;
         const salary = form.salary.value;
         const deadline = form.deadline.value;
+        const description = form.description.value;
         const number = form.number.value;
-        const jobInfo = { date, name, title, category, salary, deadline, number }
-        console.log(jobInfo);
+        const jobData = { date, name, title, image, description, category, salary, deadline, number }
+        console.log(jobData);
 
-
-        fetch('https://b8a10-brandshop-server-side-isha35-1215.vercel.app/products', {
+        fetch('http://localhost:5000/job', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(jobInfo)
+            body: JSON.stringify(jobData)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    swal("Success", "Your product added successfully", "success");
+                    swal("Success", "Job is posted successfully", "success");
                 }
             })
+
+        // const url = 'https://localhost:5000/jobs';
+        // axios.post(url, jobData)
+        //     .then(res => {
+        //         console.log(res.data);
+        //     })
+        //     .then(data => {
+        //         console.log(data);
+        //         if (data.insertedId) {
+        //             swal("Success", "Your product added successfully", "success");
+        //         }
+        //     })
+
+
+
+
     }
 
     return (
@@ -41,13 +64,14 @@ const AddJob = () => {
                         <label className="label">
                             <span className="label-text">Posted By</span>
                         </label>
-                        <input type="text" name="name" placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" />
+                        <input type="text" name="name" defaultValue={user?.displayName} placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" />
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Posting Date</span>
                         </label>
                         <input type="text" name="date" placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" />
+                        {/* <ReactDatePicker selected={startDate}  name="date" className="input input-bordered border-pink-600 w-full max-w-xs" /> */}
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row gap-8 justify-center items-center" >
@@ -56,19 +80,19 @@ const AddJob = () => {
                             <span className="label-text">Job Category</span>
                         </label>
                         {/* <input type="text" name="brand" placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" /> */}
-                        <select name="Category" className="select select-bordered border-pink-600 w-full max-w-xs">
+                        <select name="category" className="select select-bordered border-pink-600 w-full max-w-xs">
                             <option disabled selected>Select Category</option>
-                            <option>On Site Job</option>
-                            <option>Remote Job</option>
+                            <option>OnSite</option>
+                            <option>Remote</option>
                             <option>Hybrid</option>
-                            <option>Part Time</option>
+                            <option>PartTime</option>
                         </select>
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Job Title</span>
                         </label>
-                        <input type="text" name="Title" placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" />
+                        <input type="text" name="title" placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" />
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row gap-8 justify-center items-center" >
@@ -90,26 +114,35 @@ const AddJob = () => {
                         <label className="label">
                             <span className="label-text">Application Deadline</span>
                         </label>
-                        <input type="text" name="deadline" placeholder="" className="input input-bordered border-pink-600 w-full" />
+                        <ReactDatePicker selected={startDate} onChange={(date) => setStartDate(date)} name="deadline" className="input input-bordered border-pink-600 w-full max-w-xs" />
+
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Applicants Number</span>
                         </label>
-                        <input type="text" name="number" placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" />
+                        <input type="text" name="number" defaultValue={0} placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" />
                     </div>
 
                 </div>
-                <div className=" mb-6 flex flex-col lg:flex-row justify-center items-center">
-            
-                        <div className="form-control w-full max-w-2xl">
-                            <label className="label">
-                                <span className="label-text"></span>
-                            </label>
-                            <input type="submit" value='Add Job' className="mt-4 text-lg btn btn-secondary bg-pink-700 border-pink-700 text-white normal-case " />
-                        </div>
-                
+
+                <div className="mb-6 flex flex-col lg:flex-row gap-8 justify-center items-center">
+
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Job Description</span>
+                        </label>
+                        <input type="text" name="description" placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" />
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text"></span>
+                        </label>
+                        <input type="submit" value='Add Job' className="mt-4 text-lg btn btn-secondary bg-pink-700 border-pink-700 text-white normal-case " />
+                    </div>
+
                 </div>
+
             </form>
 
         </div>

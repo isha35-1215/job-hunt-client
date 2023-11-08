@@ -23,8 +23,8 @@ const Footer = () => {
                 </nav>
             </footer>
             <footer className="footer px-10 py-4 border-t bg-pink-100 text-pink-content border-pink-300">
-                <aside className="items-center grid-flow-col">
-                    <a className="btn btn-ghost normal-case invisible lg:visible  text-pink-800  text-3xl font-bold">
+                <aside className="items-center grid-flow-row lg:grid-flow-col ">
+                    <a className="btn btn-ghost normal-case  text-pink-800  text-3xl font-bold">
                         <img className='w-[40px] h-[40px] rounded-full' src="https://i.ibb.co/6DXzgfX/jobhuntlogo.png" alt="icon1" border="0" />JobHunt</a>
                     <div>
                         <p>Address: 229 West Brahmondi, Narsingdi</p>

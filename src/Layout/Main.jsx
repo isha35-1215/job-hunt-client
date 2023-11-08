@@ -5,8 +5,9 @@ import Navbar from "../Pages/Shared/Navbar/Navbar";
 const Main = () => {
     return (
         <div>
-            <div className="max-w-7xl mx-auto font-poppins">
-            <Navbar></Navbar>
+                        <Navbar></Navbar>
+
+            <div className="max-w-screen-sm md:max-w-screen-md lg:max-w-screen-xl mx-auto font-poppins">
             <Outlet></Outlet>
         </div>
         <Footer></Footer>
