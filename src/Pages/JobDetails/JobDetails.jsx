@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import swal from "sweetalert";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const JobDetails = () => {
     const jobInfo = useLoaderData();
@@ -70,6 +71,10 @@ const JobDetails = () => {
 
     return (
         <div className="py-10" key={_id}>
+            <Helmet>
+                <title>JobHunt | Job Details</title>
+                <meta name="description" content="This is a description of my page." />
+            </Helmet>
             <div className="max-w-7xl mx-auto rounded-md bg-cover bg-center">
                 <img src={image} alt={name} className="min-w-[1200px] max-h-[450px] rounded-md bg-cover" />
             </div>
