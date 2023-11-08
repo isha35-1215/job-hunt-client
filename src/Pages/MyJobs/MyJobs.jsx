@@ -7,13 +7,13 @@ const MyJobs = () => {
     // const MyJobData = useLoaderData();
     // const [myData, setMyData] = useState(MyJobData);
 
-    
+
 
     const { user } = useContext(AuthContext);
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/jobs/${user?.displayName}`)
+        fetch(`http://localhost:5000/jobs/${user?.displayName}`, {credentials: true})
             .then((res) => res.json())
             .then((data) => {
                 setCards(data);
