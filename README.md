@@ -26,10 +26,4 @@ Here are five key functionalities of the JobHunt website:
     -Each job card displays important details, such as the job poster's name, title, posting date, application deadline, salary range, and the number of applicants.
     -Users can click "View Details" to access more information about a specific job.
 
-**Apply for Jobs:**
-    -Users can apply for jobs by clicking the "Apply" button on job details pages.
-    -A modal opens to provide a seamless application process.
-    -The modal auto-fills the applicant's name and email, and they can submit their resume link.
-    -Job applicants are prevented from applying to their own job listings.
-    -Applications are saved in a MongoDB collection.
 
