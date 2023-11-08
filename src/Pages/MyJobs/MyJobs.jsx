@@ -4,11 +4,6 @@ import { AuthContext } from "../Providers/AuthProvider";
 
 const MyJobs = () => {
 
-    // const MyJobData = useLoaderData();
-    // const [myData, setMyData] = useState(MyJobData);
-
-
-
     const { user } = useContext(AuthContext);
     const [cards, setCards] = useState([]);
 
