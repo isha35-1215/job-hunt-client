@@ -12,7 +12,7 @@ live-site link: https://jobhunt-dc129.web.app
 
 
 
-Here are five key functionalities of the JobHunt website:
+JobHunt project is explained here:
 
 **User Authentication:**
     -Users can register and log in to the website using their email and password.
