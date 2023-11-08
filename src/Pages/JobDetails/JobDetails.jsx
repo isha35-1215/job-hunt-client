@@ -66,7 +66,6 @@ const JobDetails = () => {
         }
 
 
-
     };
 
     return (
