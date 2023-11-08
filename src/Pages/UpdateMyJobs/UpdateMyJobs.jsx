@@ -25,7 +25,7 @@ const UpdateMyJobs = () => {
 
 
 
-        fetch(`http://localhost:5000/jobDetails/${id}`, {
+        fetch(`https://jobhunt-server.vercel.app/jobDetails/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -6,7 +6,7 @@ const RemoteJob = () => {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/job/Remote`)
+        fetch(`https://jobhunt-server.vercel.app/job/Remote`)
             .then((res) => res.json())
             .then((data) => setCards(data));
     }, []);

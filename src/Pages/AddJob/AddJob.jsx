@@ -23,7 +23,7 @@ const AddJob = () => {
         const jobData = { date, name, title, image, description, category, salary, deadline, number }
         console.log(jobData);
 
-        fetch('http://localhost:5000/job', {
+        fetch('https://jobhunt-server.vercel.app/job', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

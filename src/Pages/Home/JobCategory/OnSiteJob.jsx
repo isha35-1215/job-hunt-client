@@ -7,7 +7,7 @@ const OnSiteJob = () => {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/job/OnSite`)
+        fetch(`https://jobhunt-server.vercel.app/job/OnSite`)
             .then((res) => res.json())
             .then((data) => setCards(data));
     }, []);

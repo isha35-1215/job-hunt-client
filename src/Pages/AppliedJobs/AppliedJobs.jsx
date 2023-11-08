@@ -14,7 +14,7 @@ const AppliedJobs = () => {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/applied/${user?.displayName}`, {credentials: true})
+        fetch(`https://jobhunt-server.vercel.app/applied/${user?.displayName}`, {credentials:true})
             .then((res) => res.json())
             .then((data) => {
                 setCards(data);

@@ -25,7 +25,7 @@ const MyJobItems = ({ filter, cards, setCards }) => {
 
     //     console.log(applied);
 
-    //     fetch(`http://localhost:5000/jobDetails/${_id}`, {
+    //     fetch(`https://jobhunt-server.vercel.app/jobDetails/${_id}`, {
     //         method: 'PUT',
     //         headers: {
     //             'content-type': 'application/json',
@@ -55,7 +55,7 @@ const MyJobItems = ({ filter, cards, setCards }) => {
 
 
     const handleDelete = id => {
-        console.log('called', `http://localhost:5000/delete/${_id}`);
+        console.log('called', `https://jobhunt-server.vercel.app/delete/${_id}`);
 
         Swal.fire({
             title: 'Are you sure?',
@@ -67,7 +67,7 @@ const MyJobItems = ({ filter, cards, setCards }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/delete/${_id}`, {
+                fetch(`https://jobhunt-server.vercel.app/delete/${_id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())

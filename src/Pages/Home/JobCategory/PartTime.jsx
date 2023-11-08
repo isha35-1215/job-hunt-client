@@ -6,7 +6,7 @@ const PartTime = () => {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/job/PartTime`)
+        fetch(`https://jobhunt-server.vercel.app/job/PartTime`)
             .then((res) => res.json())
             .then((data) => setCards(data));
     }, []);

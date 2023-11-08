@@ -6,7 +6,7 @@ const Hybrid = () => {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-      fetch(`http://localhost:5000/job/Hybrid`)
+      fetch(`https://jobhunt-server.vercel.app/job/Hybrid`)
         .then((res) => res.json())
         .then((data) => setCards(data));
     }, []);

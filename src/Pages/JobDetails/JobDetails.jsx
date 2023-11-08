@@ -37,7 +37,7 @@ const JobDetails = () => {
          else {
             console.log(applied);
 
-            fetch('http://localhost:5000/applied', {
+            fetch('https://jobhunt-server.vercel.app/applied', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -57,7 +57,7 @@ const JobDetails = () => {
                 const applyNum = parseInt(number);
                 const updateNumber = applyNum + 1;
                 console.log(updateNumber);
-                const updateUrl = `http://localhost:5000/job/${_id}`
+                const updateUrl = `https://jobhunt-server.vercel.app/job/${_id}`
                 axios.patch(updateUrl, {number: updateNumber })
                 .then(res => {
                     console.log(res.data);
