@@ -33,6 +33,7 @@ const AppliedJobs = () => {
         
             <div >
                 <h2 className="text-center text-pink-700 text-4xl font-bold mt-5 mb-5">Applied Jobs</h2>
+                <div className="flex justify-between">
                 <select
                     name="category"
                     className="select select-bordered border-pink-600 w-full max-w-xs "
@@ -46,6 +47,7 @@ const AppliedJobs = () => {
                     <option value="PartTime">PartTime</option>
                 </select>
                 <button className="btn btn-secondary text-base normal-case bg-pink-600 mx-4" onClick={() => toPDF()}>Download PDF</button>
+                </div>
 
                 <div ref={targetRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 my-10 mx-auto">
                     <table className="table">
