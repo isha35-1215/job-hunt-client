@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData, useParams } from "react-router-dom";
 import swal from "sweetalert";
 
@@ -45,6 +46,10 @@ const UpdateMyJobs = () => {
 
     return (
         <div className="">
+            <Helmet>
+                <title>JobHunt | Update Job Details</title>
+                <meta name="description" content="This is a description of my page." />
+            </Helmet>
             <h2 className="text-center text-pink-700 text-4xl font-bold mt-5 mb-5">Update Job Details</h2>
             <form onSubmit={handleUpdate}>
                 <div className="flex flex-col lg:flex-row gap-8 justify-center items-center" >
