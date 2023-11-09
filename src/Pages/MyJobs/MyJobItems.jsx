@@ -6,7 +6,7 @@ const MyJobItems = ({ filter, cards, setCards }) => {
     const { _id, name, title, salary, deadline, date, description, image, category, number } = filter;
     console.log(_id);
 
-    
+
     const handleDelete = id => {
         console.log('called', `https://jobhunt-server.vercel.app/delete/${_id}`);
 
@@ -54,12 +54,9 @@ const MyJobItems = ({ filter, cards, setCards }) => {
         <tr>
 
             <td>
-
                 <div className="text-lg  font-semibold">{name}</div>
                 <div className="text-lg  font-semibold">{date}</div>
-
             </td>
-
             <td>
                 <div className="text-lg  font-semibold">{title}</div>
             </td>
@@ -72,7 +69,6 @@ const MyJobItems = ({ filter, cards, setCards }) => {
             <td>
                 <div className="text-lg  font-semibold">{salary}</div>
             </td>
-
             <td>
                 <div className="text-lg  font-semibold">{deadline}</div>
             </td>
@@ -84,12 +80,12 @@ const MyJobItems = ({ filter, cards, setCards }) => {
             </td>
             <th>
                 <Link to={`/updateMyJobs/${_id}`}>
-                    
+
                     <button className="btn btn-ghost text-base normal-case text-pink-600 font-extrabold">Update</button>
 
                 </Link>
-                
-    < button onClick = {() => handleDelete(_id)} className = "btn btn-ghost text-base normal-case text-pink-600 font-extrabold" > Delete</button >
+
+                < button onClick={() => handleDelete(_id)} className="btn btn-ghost text-base normal-case text-pink-600 font-extrabold" > Delete</button >
 
             </th >
 

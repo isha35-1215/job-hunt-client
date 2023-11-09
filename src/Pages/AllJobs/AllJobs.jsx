@@ -26,8 +26,10 @@ const AllJobs = () => {
 
     return (
         <div>
-
-            <div className="flex flex-col justify-center">
+            <div className="max-w-7xl mx-auto rounded-md bg-cover bg-center">
+                <img src="https://i.ibb.co/k5K4mrC/recruitment-jobs-career-hiring-vacancy-word.jpg" alt="" className="min-w-0 lg:min-w-[1220px] max-h-[480px] bg-cover" />
+            </div>
+            <div className="my-10 flex flex-col justify-center">
                 <h1 className=' text-3xl text-center text-pink-800 font-bold'>Empower Your Journey</h1>
                 <h1 className='py-4 text-4xl text-center text-pink-800 font-bold'>Find Your Perfect Fit Today!</h1>
                 <div className="pb-10 form-control mx-auto">
@@ -47,7 +49,7 @@ const AllJobs = () => {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-12 my-6 px-12 md:px-20 lg:px-24">
+            <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-12 my-6 px-12 md:px-20 lg:px-24 ">
 
                 <table className="table">
                     {/* head */}

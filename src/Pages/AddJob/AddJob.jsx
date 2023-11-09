@@ -57,9 +57,12 @@ const AddJob = () => {
 
     return (
         <div className="">
+            <div className="max-w-7xl mx-auto rounded-md bg-cover bg-center">
+                <img src="https://i.ibb.co/j6qFFpk/hands-holding-up-blue-letters-forming-word-jobs.jpg" alt="" className="min-w-0 lg:min-w-[1220px] max-h-[480px] bg-cover" />
+            </div>
             <h2 className="text-center text-pink-700 text-4xl font-bold mt-5 mb-5">Post A Job</h2>
             <form onSubmit={handleAddJob}>
-                <div className="flex flex-col lg:flex-row gap-8 justify-center items-center" >
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center items-center" >
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Posted By</span>
@@ -74,7 +77,7 @@ const AddJob = () => {
                         {/* <ReactDatePicker selected={startDate}  name="date" className="input input-bordered border-pink-600 w-full max-w-xs" /> */}
                     </div>
                 </div>
-                <div className="flex flex-col lg:flex-row gap-8 justify-center items-center" >
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center items-center" >
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Job Category</span>
@@ -95,7 +98,7 @@ const AddJob = () => {
                         <input type="text" name="title" placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" />
                     </div>
                 </div>
-                <div className="flex flex-col lg:flex-row gap-8 justify-center items-center" >
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center items-center" >
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Salary Range</span>
@@ -109,7 +112,7 @@ const AddJob = () => {
                         <input type="text" name="image" placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" />
                     </div>
                 </div>
-                <div className=" flex flex-col lg:flex-row gap-8 justify-center items-center" >
+                <div className=" flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center items-center" >
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Application Deadline</span>
@@ -126,7 +129,7 @@ const AddJob = () => {
 
                 </div>
 
-                <div className="mb-6 flex flex-col lg:flex-row gap-8 justify-center items-center">
+                <div className="mb-6 flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center items-center">
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">

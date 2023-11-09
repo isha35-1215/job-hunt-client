@@ -32,6 +32,9 @@ const AppliedJobs = () => {
     return (
         
             <div >
+                <div className="max-w-7xl mx-auto rounded-md bg-cover bg-center">
+                <img src="https://i.ibb.co/zJBk28f/rag-dolls-with-word-new-job.jpg" alt="" className="min-w-0 lg:min-w-[1200px] max-h-[450px] bg-cover" />
+            </div>
                 <h2 className="text-center text-pink-700 text-4xl font-bold mt-5 mb-5">Applied Jobs</h2>
                 <div className="flex justify-between">
                 <select

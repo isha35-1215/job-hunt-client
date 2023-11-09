@@ -17,14 +17,16 @@ const MyJobs = () => {
 
     return (
         <div>
+            <div className="max-w-7xl mx-auto rounded-md bg-cover bg-center">
+                <img src="https://i.ibb.co/3vrkdws/job-career-hiring-recruitment-qualification-graphic.jpg" alt="" className="min-w-0 lg:min-w-[1220px] max-h-[480px] bg-cover" />
+            </div>
             <h2 className="text-center text-pink-700 text-4xl font-bold mt-5 mb-5">My Jobs</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 my-10 mx-auto">
             <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
-                            
-                            <th className="text-xl font-bold text-pink-700">Post Info</th>
+                        <tr> 
+                            <th className="text-xl font-bold text-pink-700">Posted by</th>
                             <th className="text-xl font-bold text-pink-700">Job Title</th>
                             <th className="text-xl font-bold text-pink-700">Category</th>
                             <th className="text-xl font-bold text-pink-700">Banner</th>

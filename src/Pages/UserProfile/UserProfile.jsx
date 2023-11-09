@@ -13,7 +13,7 @@ const UserProfile = () => {
     return (
         <div>
             <h1 className='py-4 text-4xl text-center text-pink-900 font-bold'>My Profile</h1>
-                <div className="flex flex-col justify-between mx-72 my-10">
+                <div className="flex flex-row gap-20 mx-72 my-10">
                     <div>
                         <img src={user?.photoURL} className="w-72 rounded-lg shadow-2xl" />
                     </div>
