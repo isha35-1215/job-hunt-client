@@ -10,7 +10,7 @@ Currently, two official plugins are available:
 
 live-site link: https://jobhunt-dc129.web.app
 
-
+if possible, try to use microsoft edge to avoid dangerous restrictions. 
 
 JobHunt project is explained here:
 
