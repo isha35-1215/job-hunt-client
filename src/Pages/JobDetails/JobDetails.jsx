@@ -5,6 +5,7 @@ import swal from "sweetalert";
 import axios from "axios";
 import { Helmet } from "react-helmet";
 
+
 const JobDetails = () => {
     const jobInfo = useLoaderData();
     const { _id, name, title, image, date, deadline, number, salary, description, category } = jobInfo;

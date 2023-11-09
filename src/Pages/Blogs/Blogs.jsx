@@ -1,7 +1,15 @@
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
+
 const Blogs = () => {
+    useEffect(() => {
+        AOS.init();
+      }, [])
     return (
-        <div>
+        <div data-aos="zoom-in">
             <div className="max-w-7xl mx-auto rounded-md bg-cover bg-center">
                 <img src="https://i.ibb.co/sy8hs54/we-are-hiring-digital-collage.jpg" alt="" className="min-w-0 lg:min-w-[1220px] max-h-[480px] bg-cover" />
             </div>

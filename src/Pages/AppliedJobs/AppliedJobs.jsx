@@ -2,8 +2,15 @@ import AppliedJobsRow from "./AppliedJobsRow";
 import { useContext, useEffect, useState } from "react";
 import { usePDF } from "react-to-pdf";
 import { AuthContext } from "../Providers/AuthProvider";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 const AppliedJobs = () => {
+    useEffect(() => {
+        AOS.init();
+      }, [])
     const { toPDF, targetRef } = usePDF({ filename: 'page.pdf' });
 
     const [searchInput, setSearchInput] = useState('');
@@ -31,7 +38,7 @@ const AppliedJobs = () => {
 
     return (
         
-            <div >
+            <div data-aos="zoom-out">
                 <div className="max-w-7xl mx-auto rounded-md bg-cover bg-center">
                 <img src="https://i.ibb.co/zJBk28f/rag-dolls-with-word-new-job.jpg" alt="" className="min-w-0 lg:min-w-[1200px] max-h-[450px] bg-cover" />
             </div>

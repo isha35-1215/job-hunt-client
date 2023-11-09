@@ -1,8 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import MyJobItems from "./MyJobItems";
 import { AuthContext } from "../Providers/AuthProvider";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 const MyJobs = () => {
+    useEffect(() => {
+        AOS.init();
+      }, [])
 
     const { user } = useContext(AuthContext);
     const [cards, setCards] = useState([]);
@@ -16,7 +23,7 @@ const MyJobs = () => {
     }, []);
 
     return (
-        <div>
+        <div data-aos="flip-down">
             <div className="max-w-7xl mx-auto rounded-md bg-cover bg-center">
                 <img src="https://i.ibb.co/3vrkdws/job-career-hiring-recruitment-qualification-graphic.jpg" alt="" className="min-w-0 lg:min-w-[1220px] max-h-[480px] bg-cover" />
             </div>

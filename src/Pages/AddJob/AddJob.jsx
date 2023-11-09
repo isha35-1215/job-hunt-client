@@ -3,8 +3,16 @@ import swal from "sweetalert";
 import "react-datepicker/dist/react-datepicker.css";
 import ReactDatePicker from "react-datepicker";
 import { AuthContext } from "../Providers/AuthProvider";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
+
 
 const AddJob = () => {
+    useEffect(() => {
+        AOS.init();
+      }, [])
     const [startDate, setStartDate] = useState(new Date());
     const { user} = useContext(AuthContext);
 
@@ -37,26 +45,10 @@ const AddJob = () => {
                     swal("Success", "Job is posted successfully", "success");
                 }
             })
-
-        // const url = 'https://localhost:5000/jobs';
-        // axios.post(url, jobData)
-        //     .then(res => {
-        //         console.log(res.data);
-        //     })
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.insertedId) {
-        //             swal("Success", "Your product added successfully", "success");
-        //         }
-        //     })
-
-
-
-
     }
 
     return (
-        <div className="">
+        <div data-aos="zoom-in">
             <div className="max-w-7xl mx-auto rounded-md bg-cover bg-center">
                 <img src="https://i.ibb.co/j6qFFpk/hands-holding-up-blue-letters-forming-word-jobs.jpg" alt="" className="min-w-0 lg:min-w-[1220px] max-h-[480px] bg-cover" />
             </div>

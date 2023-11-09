@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import AllJobsRow from "./AllJobsRow";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const AllJobs = () => {
+    useEffect(() => {
+        AOS.init();
+      }, [])
 
     const [searchInput, setSearchInput] = useState('');
     const [cards, setCards] = useState([]);
@@ -25,7 +31,7 @@ const AllJobs = () => {
     }, [searchInput, cards]);
 
     return (
-        <div>
+        <div data-aos="flip-up">
             <div className="max-w-7xl mx-auto rounded-md bg-cover bg-center">
                 <img src="https://i.ibb.co/k5K4mrC/recruitment-jobs-career-hiring-vacancy-word.jpg" alt="" className="min-w-0 lg:min-w-[1220px] max-h-[480px] bg-cover" />
             </div>
