@@ -27,14 +27,14 @@ const JobDetails = () => {
         const applied = { applicant: appliedName, email, resume, name, title, deadline, date, salary, category };
         console.log(applied);
 
-        
-        
+
+
 
         if (user?.displayName === name) {
             swal("Sorry!!", "You can't apply for your own job!", "error");
         }
-        
-         else {
+
+        else {
             console.log(applied);
 
             fetch('https://jobhunt-server.vercel.app/applied', {
@@ -48,17 +48,17 @@ const JobDetails = () => {
                 .then((data) => {
                     console.log(data);
                     swal("Success", "Your application has been submitted successfully!", "success");
-                    document.getElementById('my_modal_1').close(); 
+                    document.getElementById('my_modal_1').close();
                 })
                 .catch((error) => {
                     console.log(error);
                 });
 
-                const applyNum = parseInt(number);
-                const updateNumber = applyNum + 1;
-                console.log(updateNumber);
-                const updateUrl = `https://jobhunt-server.vercel.app/job/${_id}`
-                axios.patch(updateUrl, {number: updateNumber })
+            const applyNum = parseInt(number);
+            const updateNumber = applyNum + 1;
+            console.log(updateNumber);
+            const updateUrl = `https://jobhunt-server.vercel.app/job/${_id}`
+            axios.patch(updateUrl, { number: updateNumber })
                 .then(res => {
                     console.log(res.data);
                 })
@@ -69,7 +69,7 @@ const JobDetails = () => {
     };
 
     return (
-        <div className="py-10" key={_id}>
+        <div key={_id}>
             <Helmet>
                 <title>JobHunt | Job Details</title>
                 <meta name="description" content="This is a description of my page." />
@@ -104,7 +104,7 @@ const JobDetails = () => {
                 </p>
                 <div className="flex justify-center">
                     <button className="btn btn-secondary bg-pink-700 text-base normal-case text-white px-8 m-6" onClick={() => {
-                        if(today > deadlineDate){
+                        if (today > deadlineDate) {
                             console.log('denied');
                             swal("Sorry!!", "Application Deadline is over!", "error");
                             return;
@@ -112,12 +112,16 @@ const JobDetails = () => {
                         else if (user?.displayName !== name) {
                             document.getElementById('my_modal_1').showModal();
                         }
-                         else {
+                        else {
                             swal("Sorry!!", "You can't apply for your own job!", "error");
                         }
                     }}>Apply</button>
                     <dialog id="my_modal_1" className="modal">
                         <div className="modal-box">
+                            <form method="dialog">
+                                {/* if there is a button in form, it will close the modal */}
+                                <button className="btn btn-sm btn-circle btn-ghost text-pink-600 font-extrabold text-2xl absolute right-6 top-6">✕</button>
+                            </form>
                             <form onSubmit={handleSubmit}>
                                 <div className="form-control w-full max-w-xs">
                                     <label className="label">
@@ -139,11 +143,12 @@ const JobDetails = () => {
                                 </div>
                                 <div className="modal-action">
                                     <button type="submit" className="btn btn-secondary bg-pink-700 text-base normal-case text-white px-4">Submit</button>
-                                    <button  className="btn btn-secondary bg-pink-700 text-base normal-case text-white px-4" onClick={() => {
-                                    document.getElementById('my_modal_1').close();
-                                }}>Close</button>
+
                                 </div>
                             </form>
+                            {/* <button  className="btn btn-secondary bg-pink-700 text-base normal-case text-white px-4" onClick={() => {
+                                    document.getElementById('my_modal_1').close();
+                                }}>Close</button> */}
                         </div>
                     </dialog>
                 </div>
