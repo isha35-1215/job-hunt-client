@@ -28,8 +28,8 @@ const JobCategory = () => {
     return (
         <div className='my-10'>
             <h1 className='py-4 text-4xl text-center text-pink-900 font-bold'>Find Your Desired Job By Category</h1>
-            <Tabs>
-                <TabList className='text-sm lg:text-2xl text-pink-700 font-semibold'>
+            <Tabs className="my-10">
+                <TabList className='text-sm lg:text-2xl text-pink-700 font-semibold text-center border-b-2'>
                     <Tab>All Jobs</Tab>
                     <Tab>On Site Job</Tab>
                     <Tab>Remote Job</Tab>

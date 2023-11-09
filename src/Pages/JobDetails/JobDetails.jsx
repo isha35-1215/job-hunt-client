@@ -75,7 +75,7 @@ const JobDetails = () => {
                 <meta name="description" content="This is a description of my page." />
             </Helmet>
             <div className="max-w-7xl mx-auto rounded-md bg-cover bg-center">
-                <img src={image} alt={name} className="min-w-[1200px] max-h-[450px] rounded-md bg-cover" />
+                <img src={image} alt={name} className="min-w-0 lg:min-w-[1200px] max-h-[450px] bg-cover" />
             </div>
             <div className="text-neutral-content mx-20">
                 <h1 className="pt-10 text-2xl font-semibold text-pink-900">
