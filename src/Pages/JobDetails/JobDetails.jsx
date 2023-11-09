@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import swal from "sweetalert";
 import axios from "axios";
@@ -63,6 +63,7 @@ const JobDetails = () => {
                     console.log(res.data);
                 })
 
+
         }
 
 
@@ -97,7 +98,7 @@ const JobDetails = () => {
                     Application Deadline: {deadline}
                 </h1>
                 <h1 className="pt-6 text-2xl font-semibold text-pink-900">
-                    Application Number: {number}
+                    Number of Applicants: {number}
                 </h1>
                 <p className="pt-6 text-xl font-medium text-pink-700">
                     Job Description: {description}
@@ -142,8 +143,9 @@ const JobDetails = () => {
                                     <input type="text" name="resume" placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" />
                                 </div>
                                 <div className="modal-action">
-                                    <button type="submit" className="btn btn-secondary bg-pink-700 text-base normal-case text-white px-4">Submit</button>
-
+                                    <Link to="/appliedJobs">
+                                        <button type="submit" className="btn btn-secondary bg-pink-700 text-base normal-case text-white px-4">Submit</button>
+                                    </Link>
                                 </div>
                             </form>
                             {/* <button  className="btn btn-secondary bg-pink-700 text-base normal-case text-white px-4" onClick={() => {

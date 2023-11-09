@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import swal from "sweetalert";
 
 const UpdateMyJobs = () => {
@@ -52,7 +52,7 @@ const UpdateMyJobs = () => {
             </Helmet>
             <h2 className="text-center text-pink-700 text-4xl font-bold mt-5 mb-5">Update Job Details</h2>
             <form onSubmit={handleUpdate}>
-                <div className="flex flex-col lg:flex-row gap-8 justify-center items-center" >
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center items-center" >
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Posting Date</span>
@@ -73,7 +73,7 @@ const UpdateMyJobs = () => {
                         </select>
                     </div>
                 </div>
-                <div className="flex flex-col lg:flex-row gap-8 justify-center items-center" >
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center items-center" >
                     {/* brand input */}
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
@@ -90,7 +90,7 @@ const UpdateMyJobs = () => {
                     </div>
                 </div>
                 {/* price input */}
-                <div className="flex flex-col lg:flex-row gap-8 justify-center items-center" >
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center items-center" >
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Job Salary</span>
@@ -105,7 +105,7 @@ const UpdateMyJobs = () => {
                     </div>
                 </div>
                 {/* rating input field */}
-                <div className=" flex flex-col lg:flex-row gap-8 justify-center items-center" >
+                <div className=" flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center items-center" >
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
@@ -126,10 +126,15 @@ const UpdateMyJobs = () => {
                         <label className="label">
                             <span className="label-text"></span>
                         </label>
-
-                        <input type="submit" value='Update Product' className=" mt-4  btn btn-primary bg-pink-700 border-pink-700 text-white normal-case " />
+                        <input type="submit" value='Update Product' className=" mt-4  btn btn-primary bg-pink-700 border-pink-700 text-white normal-case" />
+                        <Link to="/myJobs">
+                            <button className=" mt-4  btn btn-ghost normal-case text-xl ml-72">Go Back ---</button>
+                        </Link>
                     </div>
                 </div>
+                <div className="mb-6 form-control w-full max-w-2xl ">
+                        
+                    </div>
             </form>
         </div>
     );
