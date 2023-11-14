@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import swal from "sweetalert";
 import axios from "axios";
@@ -10,6 +10,7 @@ const JobDetails = () => {
     const jobInfo = useLoaderData();
     const { _id, name, title, image, date, deadline, number, salary, description, category } = jobInfo;
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
     const today = new Date();
     console.log(today);
     // const formattedDate = `${today.getMonth()+1}/${today.getDate()}/${today.getFullYear()}`;
@@ -50,6 +51,7 @@ const JobDetails = () => {
                     console.log(data);
                     swal("Success", "Your application has been submitted successfully!", "success");
                     document.getElementById('my_modal_1').close();
+                    navigate('/appliedJobs');
                 })
                 .catch((error) => {
                     console.log(error);
@@ -144,9 +146,7 @@ const JobDetails = () => {
                                     <input type="text" name="resume" placeholder="" className="input input-bordered border-pink-600 w-full max-w-xs" />
                                 </div>
                                 <div className="modal-action">
-                                    <Link to="/appliedJobs">
                                         <button type="submit" className="btn btn-secondary bg-pink-700 text-base normal-case text-white px-4">Submit</button>
-                                    </Link>
                                 </div>
                             </form>
                             {/* <button  className="btn btn-secondary bg-pink-700 text-base normal-case text-white px-4" onClick={() => {
