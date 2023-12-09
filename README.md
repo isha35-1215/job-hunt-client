@@ -1,14 +1,6 @@
-# React + Vite
+Website name: JobHunt
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-
-live-site link: https://jobhunt-dc129.web.app
+live-site link: https://proud-beef.surge.sh
 
 if possible, try to use microsoft edge to avoid dangerous restrictions. 
 
