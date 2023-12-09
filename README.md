@@ -2,9 +2,9 @@ Website name: JobHunt
 
 live-site link: https://proud-beef.surge.sh
 
-if possible, try to use microsoft edge to avoid dangerous restrictions. 
+JobHunt is a website where one can find a suitable job for them. User can apply for a job. And also anyone can post a job to find a employee to hire.
 
-JobHunt project is explained here:
+JobHunt project features is explained here:
 
 **User Authentication:**
     -Users can register and log in to the website using their email and password.
